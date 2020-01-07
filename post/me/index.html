@@ -121,15 +121,15 @@
 </svg>
 
     <header class="header">
-  <amp-img alt="Xie hui's blog"
+  <amp-img alt="My New Hugo Site"
     width="128px"
     height="128px"
     class="logo"
-    src="01.png"
+    src=""
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-    <h2 class="title"><a href="https://xh306.github.io/" title="My New Hugo Site">Xie hui's blog</a></h2>
+    <h2 class="title"><a href="https://xh306.github.io/" title="My New Hugo Site">My New Hugo Site</a></h2>
   
   <p class="subtitle"></p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -213,7 +213,7 @@
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2019 Xie hui's blog</p>
+  <p>Copyright © 2018-2020 My New Hugo Site</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 
@@ -223,59 +223,4 @@
 
 
   </body>
-  <script type="text/javascript">
-		/*
-		 * https://ly522.com
-		 */
-		! function(e, t, a) {
-			function r() {
-				for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e]
-					.scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" +
-					s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color +
-					";z-index:99999");
-				requestAnimationFrame(r)
-			}
-
-			function n() {
-				var t = "function" == typeof e.onclick && e.onclick;
-				e.onclick = function(e) {
-					t && t(), o(e)
-				}
-			}
-
-			function o(e) {
-				var a = t.createElement("div");
-				a.className = "heart", s.push({
-					el: a,
-					x: e.clientX - 5,
-					y: e.clientY - 5,
-					scale: 1,
-					alpha: 1,
-					color: c()
-				}), t.body.appendChild(a)
-			}
-
-			function i(e) {
-				var a = t.createElement("style");
-				a.type = "text/css";
-				try {
-					a.appendChild(t.createTextNode(e))
-				} catch (t) {
-					a.styleSheet.cssText = e
-				}
-				t.getElementsByTagName("head")[0].appendChild(a)
-			}
-
-			function c() {
-				return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
-			}
-			var s = [];
-			e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame ||
-				e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
-					setTimeout(e, 1e3 / 60)
-				}, i(
-					".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"
-				), n(), r()
-		}(window, document);
-	</script>
 </html>
