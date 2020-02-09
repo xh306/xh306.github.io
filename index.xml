@@ -1,15 +1,114 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xie hui's blog</title>
+    <title>My New Hugo Site</title>
     <link>https://xh306.github.io/</link>
-    <description>Recent content on Xie hui's blog</description>
+    <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jan 2020 16:19:34 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 20:31:25 +0800</lastBuildDate>
     
 	<atom:link href="https://xh306.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>消息中间件</title>
+      <link>https://xh306.github.io/post/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Sun, 09 Feb 2020 20:31:25 +0800</pubDate>
+      
+      <guid>https://xh306.github.io/post/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description>1.1什么是消息中间件 消息 (Message) 是指在应用间传送的数据。消息可以非常简单，比如只包含文本字符串、
+JSON 等，也可以很复杂，比如内嵌对象。
+消息队列中间件，也可以称为消息队列或者消息中间件。它一般有两种传递模式:点对点
+(p2p,Point-to-Point) 模式和发布/订阅 (Pub/Sub) 模式。点对点模式是基于队列的，消息生产者发送消息到队列，消息消费者从队列中接收消息，队列的存在使得消息的异步传输成为可能。
+布订阅模式定义了如何向 个内容节点发布和订阅消息，这个内容节点称为主题 (topic) ，主
+题可以认为是消息传递的中介，消息发布者将消息发布到某个主题，而消息订阅者则从主题中
+订阅消息。主题使得消息的订阅者与消息的发布者互相保持独立，不需要进行接触即可保证消
+息的传递，发布/订阅模式在消息的一对多广播时采用
+消息中间件将消息路由给应用程序 ，这样消息就可存在于完全不同的计算机上。消息中
+间件负责处理网络通信，如果网络连接不可用，消息 中间件会存储消息 ，直到连接变得可用，
+再将消息转发给应用程序 。灵活性的另一方面体现在，当应用程序 发送其消息时，应用程
+序B甚至可以处于不运行状态，消息中间件将保留这份消息，直到应用程序 开始执行并消费
+消息，这样还防止了应用程序 因为等待应用程序 消费消息而出现阻塞。这种异步通信方式
+要求应用程序的设计与现在大多数应用不同。不过对于时间无关或并行处理的场景，它可能是
+个极其有用的方法
+1.2消息中间件的作用 ​	消息中间件凭借其独到的特性，在不同的应用场景下可以展现不同的作用 。总 的来说，消
+息中间件的作用可以概括如下。
+​	解耦:在项目启动之初来预测将来会碰到什么需求是极其困难的。消息中间件在处理过程
+中间插入了一个隐含的、基于数据的接口层，两边的处理过程都要实现这一接口，这允许你独
+立地扩展或修改两边的处理过程，只要确保它们遵守同样的接口约束即可 。
+​	冗余〈存储) 有些情况下，处理数据的过程会失败。消息中间件可以把数据进行持久化直
+到它们已经被完全处理，通过这一方式规避了数据丢失风险。在把 个消息从消息中间件中删
+除之前，需要你的处理系统明确地指出该消息己经被处理完成，从而确保你的数据被安全地保
+存直到你使用完毕。
+​	扩展性: 因为消息中间件解捐了应用的处理过程，所以提高消息入队和处理的效率是很容
+易的，只要另外增加处理过程即可，不需要改变代码，也不需要调节参数。
+​	削峰: 在访问量剧增的情况下，应用仍然需要继续发挥作用，但是这样的突发流 并不常
+见。如果以能处理这类峰值为标准而投入资源，无疑是巨大的浪费 使用消息中间件能够使关
+键组件支撑突发访问压力，不会因为突发的超负荷请求而完全崩惯
+​	可恢复性: 当系统一部分组件失效时，不会影响到整个系统 消息中间件降低了进程间的
+稿合度，所以即使 个处理消息的进程挂掉，加入消息中间件中的消息仍然可以在系统恢复后
+进行处理
+​	顺序保证: 在大多数使用场景下，数据处理的顺序很重要，大部分消息中间件支持 定程</description>
+    </item>
+    
+    <item>
+      <title>Redis深度学习</title>
+      <link>https://xh306.github.io/post/redis%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 09 Feb 2020 20:31:09 +0800</pubDate>
+      
+      <guid>https://xh306.github.io/post/redis%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <description>Redis为什么查询那么快？ Redis安装在磁盘，数据是基于内存条存储的
+Redis特性 1）速度快
+Redis基于内存条的存储读取
+2）键值对的数据结构服务器
+key它永远是一个字符串，value支持String、hash、list、set、zset类型存储
+3）丰富的功能
+对多类语言提供了API,例如php、c#
+4）简单稳定
+主线程是单线程
+5）持久化
+内存的数据实时备份到磁盘，内存的数据持久到磁盘。
+6) 主从复制
+24小时不间断运行，例如A服务崩溃B服务可代替工作，客户端语言很多。对Java而言提供了一个很有用的api类Jedis
+8）高可用和分布式转移
+9）客户端语言多
+支持Java、PHP、C#、Erlang等等多门语言
+缓存穿透 当用户发送请求，程序先查询Redis缓存有没有数据，如果没有则去数据库查询，我们称之为Redis穿透
+缓存穿透方案当发起请求时，先经过布隆过滤器，如果布隆过滤器不存在该值(false)，则不允许查询数据库并返回非法参数结果，如果存在该值(true)则允许查询数据库
+Redis使用场景
+1.缓存数据库
+2.排行榜
+3.计数器应用
+4.社交网络
+5.消息队列
+1.雪崩效应
+假如有5000个用户并发(发出同一个查询请求)，去查询key=james的值，此时Redis缓存中没有数据，那么这五千个请求就会到数据库去查询，数据库的吞吐量小，那么就会造成雪崩效应。
+解决方案：利用锁的机制，在程序启动时只允许单个线程（请求）查询数据库，其它4999个请求等待中，当查询到了结果，将结果存放到Redis缓存中并返回，而后其它4999个请求直接读取Redis缓存中key=james的值</description>
+    </item>
+    
+    <item>
+      <title>分布式锁的那些事</title>
+      <link>https://xh306.github.io/post/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</link>
+      <pubDate>Sun, 09 Feb 2020 20:30:34 +0800</pubDate>
+      
+      <guid>https://xh306.github.io/post/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</guid>
+      <description>为什么要用到锁？
+多任务环境中才需要
+任务都需要对同一共享资源进行写操作
+对资源的访问时互斥的(任务不能够同一时间访问资源)
+锁的生命周期
+​	Tips:(①竞争锁)任务通过竞争取锁才能对该资源进行操作;
+​	(②占有锁)当有一个任务在对资源进行更新时；
+​	(③任务阻塞)其他任务都不可以对这个资源进行操作
+​	(④释放锁)直到该任务完成更新
+jdk锁的那些事 ​	相比synchronized而言，其实Java有个使用起来更加方便且实用的锁Lock(ReentrantLock)，Lock接口提供了lock()、lockInterruptibly()、tryLock()、unlock()等方法，同时也体现了Lock锁的灵活性。
+lock()：阻塞式加锁(死缠烂打加锁型)
+lockInterruptibly()：可中断式阻塞加锁(可以根据特定的条件中断阻塞)
+tryLock()：加一次锁，加成功了返回true，失败了返回false
+unlock()：根据些条件解锁
+加锁解锁</description>
+    </item>
     
     <item>
       <title>聊聊常见的数据库架构设计方案？</title>
